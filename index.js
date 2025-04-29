@@ -9,8 +9,12 @@ let option_line=document.getElementById("option-line");
 let option_before=document.getElementById("option-before");
 let option_after=document.getElementById("option-after");
 let play=document.querySelector(".play");
-let computer_score=document.getElementById("computer-score")
+let cross_mark=document.querySelector(".cross-mark");
+let rule_container=document.querySelector(".rule-container");
+let rule_button=document.querySelector(".rule");
+
 // let count=0;
+let computer_score=document.getElementById("computer-score")
 let Our_score=document.getElementById("our-score")
 let pc_score=document.getElementById("computer-score")
 
@@ -72,4 +76,14 @@ con.forEach((element,index)=>{
 })
 play.addEventListener("click",()=>{
     window.location.reload();
+})
+cross_mark.addEventListener("click",()=>{
+    // console.log("clicked");
+    rule_container.style.display="none"
+    
+})
+rule_button.addEventListener("click",()=>{
+    // console.log("clicked");
+    rule_container.style.display="flex"
+    
 })

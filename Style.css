@@ -174,6 +174,8 @@ body{
     border-radius: 5px;
     cursor: pointer;
     margin-right: 20px;
+    position: fixed;
+    top: 689px;
 }
 .btn-dev{
     width: 100%;
@@ -260,14 +262,16 @@ body{
     place-content: center;
     top: 0;
     display: none;
+    z-index: 10;
 }
 .win-model::before{
     position: absolute;
     content: "";
     background: #000;
     opacity: 0.6;
-    /* width: 100%; */
-    /* height: 100%; */
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }
 .winner{
     color: #eee;
@@ -282,12 +286,14 @@ body{
 .play{
     background-color: #eee;
     width: 100px;
-    margin-left: 40px;
+    margin-left: 44px;
     padding: 10px;
     border: none;
     color: #000;
     border-radius: 10px;
     cursor: pointer;
+    z-index: 1;
+    /* text-align: center; */
 }
 .show{
     left: 7.5rem;
