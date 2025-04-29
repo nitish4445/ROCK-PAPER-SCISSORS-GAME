@@ -10,8 +10,20 @@ let option_before=document.getElementById("option-before");
 let option_after=document.getElementById("option-after");
 let play=document.querySelector(".play");
 let computer_score=document.getElementById("computer-score")
+// let count=0;
 let Our_score=document.getElementById("our-score")
-let score=JSON.parse(localStorage.getItem("score"))
+let pc_score=document.getElementById("computer-score")
+
+// let score=JSON.parse(localStorage.getItem("score"));
+let count = JSON.parse(localStorage.getItem("score")) || 0;
+let count2 = JSON.parse(localStorage.getItem("score2")) || 0;
+pc_score.innerText=count2;
+
+Our_score.innerText = count;
+// if(score){
+//     Our_score.innerText=score;
+// }
+// console.log(score);
 let random=Math.floor(Math.random()*3)
 
 // console.log(random);
@@ -42,9 +54,17 @@ con.forEach((element,index)=>{
                 else if(index==0 && random==2 || index==1 && random==0|| index==2&& random==1){
                     win_model.style.display="grid";
                     winner.innerText="YOU WIN";
+                    count++;
+                    Our_score.innerText=count;
+                    // localStorage.setItem("score",JSON.stringify(count));
+                    localStorage.setItem("score", JSON.stringify(count));
                 }else{
                     win_model.style.display="grid";
                     winner.innerText="YOU LOOSE";
+                    count2++;
+                    pc_score.innerText=count2;
+                    // localStorage.setItem("score",JSON.stringify(count));
+                    localStorage.setItem("score2", JSON.stringify(count2));
                 }
             })
         },500)
